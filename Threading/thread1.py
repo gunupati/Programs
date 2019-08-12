@@ -1,20 +1,34 @@
+# Python program to illustrate the concept
+# of threading
+# importing the threading module
 import threading
-def cube(a):
-	print('Print the cube value {}'.format(a*a*a))
 
-def square(a):
-	print('Print the squarevalue {}'.format(a*a))
+def print_cube(num):
+	"""
+	function to print cube of given num
+	"""
+	print("Cube: {}".format(num * num * num))
 
-if __name__=="__main__":
-	t1=threading.Thread(targer=cube,name=t1,args=(10))
-	t1=threading.Thread(targer=square,name=t1,args=(10))
-	
+def print_square(num):
+	"""
+	function to print square of given num
+	"""
+	print("Square: {}".format(num * num))
 
+if __name__ == "__main__":
+	# creating thread
+	t1 = threading.Thread(target=print_square, args=(10,))
+	t2 = threading.Thread(target=print_cube, args=(10,))
+
+	# starting thread 1
 	t1.start()
+	# starting thread 2
 	t2.start()
-	
 
+	# wait until thread 1 is completely executed
 	t1.join()
+	# wait until thread 2 is completely executed
 	t2.join()
-	
-	print("Done")
+
+	# both threads completely executed
+	print("Done!")
