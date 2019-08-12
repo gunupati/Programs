@@ -32,3 +32,9 @@ if __name__ == "__main__":
 
 	# both threads completely executed
 	print("Done!")
+
+
+# ============================================
+# Square: 100
+# Cube: 1000
+# Done!
