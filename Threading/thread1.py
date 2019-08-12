@@ -11,7 +11,7 @@ def print_cube(num):
 
 def print_square(num):
 	"""
-	function to print square of given num
+	function to print square of give num
 	"""
 	print("Square: {}".format(num * num))
 
